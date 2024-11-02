@@ -1,0 +1,25 @@
+{
+    "name": "Java Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/java:17", // Cambia "17" por la versión de Java que necesites
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "vscjava.vscode-java-pack",
+          "vscjava.vscode-maven",
+          "vscjava.vscode-spring-initializr" // Opcional: si trabajas con Spring Boot
+        ],
+        "settings": {
+          "java.jdt.ls.java.home": "/usr/local/openjdk-17",
+          "java.configuration.runtimes": [
+            {
+              "name": "JavaSE-17",
+              "path": "/usr/local/openjdk-17",
+              "default": true
+            }
+          ]
+        }
+      }
+    },
+    "postCreateCommand": "apt-get update && apt-get install -y maven && apt-get clean", // Opcional: Instala las dependencias del proyecto con Maven
+    "remoteUser": "vscode"
+  }  
